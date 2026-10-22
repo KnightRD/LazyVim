@@ -1,34 +1,36 @@
 return {
-  "folke/snacks.nvim",
-  opts = {
-    indent = {
+  {
+    "snacks.nvim",
+    opts = {
       indent = {
-        hl = {
-          "SnacksIndentYellow",
-          "SnacksIndentViolet",
-          "SnacksIndentBlue",
+        indent = {
+          hl = {
+            "SnacksIndentYellow",
+            "SnacksIndentViolet",
+            "SnacksIndentBlue",
+          },
+        },
+        scope = {
+          hl = {
+            "SnacksIndentScopeYellow",
+            "SnacksIndentScopeViolet",
+            "SnacksIndentScopeBlue",
+          },
+          treesitter = { enabled = true },
         },
       },
-      scope = {
-        hl = {
-          "SnacksIndentScopeYellow",
-          "SnacksIndentScopeViolet",
-          "SnacksIndentScopeBlue",
-        },
-        treesitter = { enabled = true },
-      },
-    },
-    picker = {
-      sources = {
-        explorer = {
-          hidden = true,
-          ignored = true,
-        },
-        files = {
-          hidden = true,
-        },
-        grep = {
-          hidden = true,
+      picker = {
+        sources = {
+          explorer = {
+            hidden = true, -- dotfiles in the explorer tree
+            ignored = true, -- optional: also show gitignored files
+          },
+          files = {
+            hidden = true, -- dotfiles in <leader>ff / smart find
+          },
+          grep = {
+            hidden = true,
+          },
         },
       },
     },
