@@ -42,12 +42,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = { "c", "cpp" },
---   callback = function()
---     vim.opt_local.shiftwidth = 4
---     vim.opt_local.tabstop = 4
---     vim.opt_local.softtabstop = 4
---     vim.opt_local.expandtab = true
---   end,
--- })
+-- CS50: 4-space indentation, spaces not tabs
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = vim.fn.expand("~") .. "/repos/cs50/*",
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.expandtab = true
+  end,
+})
