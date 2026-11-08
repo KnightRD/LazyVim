@@ -2,7 +2,9 @@ return {
   {
     "saghen/blink.cmp",
     opts = {
-      keymap = { preset = "default" },
+      completion = {
+        ghost_text = { enabled = false },
+      },
       sources = {
         -- no completion in comments; deliberately omits LazyVim's default
         -- "snippets" and "buffer" sources everywhere else
